@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 5000
 
 import authRoutes from "./routes/auth.routes.js"
 import messageRoutes from "./routes/message.routes.js"
+import userRoutes from "./routes/user.routes.js"
 import connectToMongoDb from "./db/connectMongoDB.js";
 
 app.use(express.json())
@@ -20,6 +21,7 @@ app.use(cookieParser())
 //routes declaration through middleware
 app.use("/api/auth", authRoutes)
 app.use("/api/messages", messageRoutes)
+app.use("/api/users", userRoutes)
 
 
 app.listen(PORT, () => {
